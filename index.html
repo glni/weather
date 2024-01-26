@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+	<meta charset="utf-8">
+	
+	<title>Weather</title>
+	
+	<meta name="robots" content="All">
+	<meta name="author" content="Udgiver">
+	<meta name="copyright" content="Information om copyright">
+	
+	<link href="css/styles.css" rel="stylesheet" type="text/css">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body class="bg-dark">
+
+<div id="weather" class="p-3 mx-auto">
+	
+	<div class="input-group mb-5">
+		<input type="text" class="form-control" id="citySearch" placeholder="Find by" aria-label="By" value="Ringsted">
+		<button type="submit" class="btn btn-primary" id="searchBtn">Søg</button>
+	</div>
+	
+	<h1 id="cityName" class="text-center">Ringsted</h1>
+	
+	<div id="today" class="border-bottom pb-4">
+		<div class="text-center" id="todayDate">0. januar</div>
+		
+		<div class="text-center py-4">
+			<img src="images/0.svg" id="todayWeatherIcon" class="img-fluid w-50" alt="Vejr ikon">
+		</div>
+		
+		<div class="row">
+			<div class="col-4 fs-1 text-end">
+				<span id="todayTemp">0</span> <span>&#8451;</span>
+			</div>
+			
+			<div class="col-8">
+				<div id="todayWeatherText">Her kommer der til at være en kort vejrbeskrivelse </div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="row row-cols-3 mt-3">
+		<div class="text-center">
+			<div id="forecastDate1">0. januar</div>
+			<img src="images/0.svg" id="forecastIcon1" class="img-fluid w-50 my-2" alt="Vejr ikon">
+			<div>
+				<span id="forecastTemp1">0</span> <span>&#8451;</span>
+			</div>
+		</div>
+		
+		<div class="text-center border-start border-end">
+			<div id="forecastDate2">0. januar</div>
+			<img src="images/0.svg" id="forecastIcon2" class="img-fluid w-50 my-2" alt="Vejr ikon">
+			<div>
+				<span id="forecastTemp2">0</span> <span>&#8451;</span>
+			</div>
+		</div>
+		
+		<div class="text-center">
+			<div id="forecastDate3">0. januar</div>
+			<img src="images/0.svg" id="forecastIcon3" class="img-fluid w-50 my-2" alt="Vejr ikon">
+			<div>
+				<span id="forecastTemp3">0</span> <span>&#8451;</span>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+	
+	
+	function getWeatherDescription(code) {
+		switch(code) {
+			case 0:
+				return "Klar himmel";
+			case 1:
+			case 2:
+			case 3:
+				return "Hovedsageligt klar, delvis overskyet og overskyet";
+			case 45:
+			case 48:
+				return "Tåge og aflejring af rimtåge";
+			case 51:
+			case 53:
+			case 55:
+				return "Støvregn: Let, moderat og tæt intensitet"
+			case 56:
+			case 57:
+				return "Frysende støvregn: Let og tæt intensitet";
+			case 61:
+			case 63:
+			case 65:
+				return "Regn: Let, moderat og kraftig intensitet";
+			case 66:
+			case 67:
+				return "Frysende regn: Let og tung intensitet";
+			case 71:
+			case 73:
+			case 75:
+				return "Snefald: Let, moderat og kraftig intensitet";
+			case 77:
+				return "Sne";
+			case 80:
+			case 81:
+			case 82:
+				return "Regnbyger: Let, moderat og voldsom";
+			case 85:
+			case 86:
+				return "Snebyger lette og tunge";
+			case 95:
+				return "Tordenvejr: Let eller moderat";
+			case 96:
+			case 99:
+				return "Tordenvejr med let og kraftig hagl";
+			default:
+				return "Ukendt vejrkode";
+		}
+	}
+	
+	function getWeatherIcon(code) {
+		switch(code) {
+			case 0:
+				return "0.svg";
+			case 1:
+			case 2:
+			case 3:
+				return "1-2-3.svg";
+			case 45:
+			case 48:
+				return "45-48.svg";
+			case 51:
+			case 53:
+			case 55:
+				return "51-53-55.svg"
+			case 56:
+			case 57:
+				return "56-57.svg";
+			case 61:
+			case 63:
+			case 65:
+				return "61-63-65.svg";
+			case 66:
+			case 67:
+				return "66-67.svg";
+			case 71:
+			case 73:
+			case 75:
+				return "71-73-75.svg";
+			case 77:
+				return "77.svg";
+			case 80:
+			case 81:
+			case 82:
+				return "80-81-82.svg";
+			case 85:
+			case 86:
+				return "85-86.svg";
+			case 95:
+				return "95.svg";
+			case 96:
+			case 99:
+				return "96-99.svg";
+			default:
+				return "Ukendt vejrkode";
+		}
+	}
+
+</script>
+</body>
+</html>

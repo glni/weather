@@ -1,0 +1,32 @@
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "../node_modules/bootstrap/scss/functions";
+
+// 2. Include any default variable overrides here
+$link-decoration: none;
+$theme-colors: (
+	"light":      #c3f1fa,
+	"dark":       #45b9c4,
+	"primary":    #c24987,
+	"secondary":  #e489af,
+	"info":       #eed1da,
+	"success":    #42c48f,
+	"warning":    #ddd937,
+	"danger":     #eb491f,
+);
+
+// 3. Include remainder of required Bootstrap stylesheets
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/variables-dark";
+
+// 4. Include any default map overrides here
+$headings-color: $gray-100;
+$body-color: $gray-100;
+$input-color: $gray-900;
+$input-focus-color: $gray-900;
+
+@import "bootstrapComponents";
+
+// 5. Du kan lave styling her...
+#weather{
+	max-width: 768px;
+}
